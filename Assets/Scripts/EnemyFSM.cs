@@ -33,9 +33,12 @@ public class EnemyFSM : MonoBehaviour
 
     void GoToBase()
     {
-        agent.isStopped = false;
 
-        agent.SetDestination(baseTransform.position);
+        if (agent.isOnNavMesh)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(baseTransform.position);
+        }
 
         if (sightSensor.detectedObject != null)
         {
@@ -59,15 +62,16 @@ public class EnemyFSM : MonoBehaviour
 
     void ChasePlayer()
     {
-        agent.isStopped = false;
-
         if (sightSensor.detectedObject == null)
         {
             currentState = EnemyState.GoToBase;
             return;
         }
-
-        agent.SetDestination(sightSensor.detectedObject.transform.position);
+        if (agent.isOnNavMesh)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(sightSensor.detectedObject.transform.position);
+        }
 
         float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
 

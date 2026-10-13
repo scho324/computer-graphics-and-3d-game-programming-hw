@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chapter 8.unity
     guid: f7adfbe8bb883c746be236969577dff6
   - enabled: 1
@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 66fcb664ca25f0c41a15c2a112265fdd
+  - enabled: 1
+    path: Assets/Scenes/Chapter 4.unity
+    guid: 40e9ff825b146a847bb323a5d1d44b06
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
