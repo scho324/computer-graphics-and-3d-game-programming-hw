@@ -5,3 +5,5 @@ Instructions:
 3. Run the game
 
 If playing around, make sure to use the Player - Polyart and Enemy - Polyart prefabs and not the prefabs with the primitives
+
+Camera has been adjusted for chapter 13; adjust it as needed to view the character/NPC models/gameplay.
