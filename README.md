@@ -1,6 +1,7 @@
-# CG3GP-Blank-Project-Repo
-A blank project in Unity version 2023.2.4f1 used in EN.601.257 at JHU.
+Instructions:
 
-This should serve as an example of correct repository structure. Note:
-- The `.gitignore` file is at the repository's root. Be sure to select the "Unity" template for the `.gitignore` when creating your own Unity repository.
-- The repo itself **is** the Unity project file. When in the Unity Hub, choose to open the repository from disk after cloning.
+1. Go to the scenes folder and open the most recent chapter
+2. Adjust the build settings to use just the most recent chapter + the win/lose scenes
+3. Run the game
+
+If playing around, make sure to use the Player - Polyart and Enemy - Polyart prefabs and not the prefabs with the primitives
