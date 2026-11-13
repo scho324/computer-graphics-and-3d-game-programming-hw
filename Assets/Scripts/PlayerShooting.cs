@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject prefab;
     public GameObject shootPoint;
     public ParticleSystem muzzleEffect;
+    public AudioSource shootSound;
 
     /*
     void Update()
@@ -29,6 +30,7 @@ public class PlayerShooting : MonoBehaviour
             clone.transform.position = shootPoint.transform.position;
             clone.transform.rotation = shootPoint.transform.rotation;
             muzzleEffect.Play();
+            shootSound.Play();
         }
 
     }
