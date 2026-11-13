@@ -14,6 +14,7 @@ public class EnemyFSM : MonoBehaviour
     private NavMeshAgent agent;
 
     public GameObject bulletPrefab;
+    public GameObject shootPoint;
     public float fireRate;
     public float lastShootTime;
     public ParticleSystem muzzleEffect;
@@ -107,10 +108,10 @@ public class EnemyFSM : MonoBehaviour
     void Shoot()
     {
         var timeSinceLastShoot = Time.time - lastShootTime;
-        if (timeSinceLastShoot > fireRate)
+        if (timeSinceLastShoot > fireRate && Time.timeScale > 0)
         {
             lastShootTime = Time.time;
-            Instantiate(bulletPrefab, transform.position, transform.rotation);
+            Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
             muzzleEffect.Play();
             shootSound.Play();
         }

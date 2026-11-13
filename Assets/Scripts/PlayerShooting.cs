@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject shootPoint;
     public ParticleSystem muzzleEffect;
     public AudioSource shootSound;
+    public int bulletsAmount;
 
     /*
     void Update()
@@ -24,8 +25,10 @@ public class PlayerShooting : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && bulletsAmount > 0 && Time.timeScale > 0)
         {
+            bulletsAmount--;
+
             GameObject clone = Instantiate(prefab);
             clone.transform.position = shootPoint.transform.position;
             clone.transform.rotation = shootPoint.transform.rotation;

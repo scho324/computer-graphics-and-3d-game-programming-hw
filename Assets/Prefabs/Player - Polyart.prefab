@@ -468,6 +468,7 @@ MonoBehaviour:
   shootPoint: {fileID: 2643828431921122207}
   muzzleEffect: {fileID: 2177626340933347945}
   shootSound: {fileID: 4610563081896498692}
+  bulletsAmount: 100
 --- !u!54 &1331013807434002380
 Rigidbody:
   m_ObjectHideFlags: 0
