@@ -19,11 +19,13 @@ public class EnemyFSM : MonoBehaviour
     public float lastShootTime;
     public ParticleSystem muzzleEffect;
     public AudioSource shootSound;
+    Animator animator;
 
-    void Start()
+    void Awake()
     {
         baseTransform = GameObject.Find("BaseHeart").transform;
         agent = GetComponentInParent<NavMeshAgent>();
+        animator = GetComponentInParent<Animator>();
     }
 
     void Update()
@@ -36,7 +38,7 @@ public class EnemyFSM : MonoBehaviour
 
     void GoToBase()
     {
-
+        animator.SetBool("Shooting", false);
         if (agent.isOnNavMesh)
         {
             agent.isStopped = false;
@@ -65,6 +67,7 @@ public class EnemyFSM : MonoBehaviour
 
     void ChasePlayer()
     {
+        animator.SetBool("Shooting", false);
         if (sightSensor.detectedObject == null)
         {
             currentState = EnemyState.GoToBase;
@@ -107,6 +110,7 @@ public class EnemyFSM : MonoBehaviour
 
     void Shoot()
     {
+        animator.SetBool("Shooting", true);
         var timeSinceLastShoot = Time.time - lastShootTime;
         if (timeSinceLastShoot > fireRate && Time.timeScale > 0)
         {

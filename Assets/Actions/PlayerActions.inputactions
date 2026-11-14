@@ -1,5 +1,5 @@
 {
-    "name": "InputActions",
+    "name": "PlayerActions",
     "maps": [
         {
             "name": "Player",
@@ -29,7 +29,7 @@
                     "id": "fbf0d609-569e-433e-8f4e-7e5260dd9f18",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 }
             ],
